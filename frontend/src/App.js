@@ -1212,7 +1212,7 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const result = await axios.get('http://localhost:5000/data', {
+      const result = await axios.get('https://statxo-usk4.onrender.com/data', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setData(result.data);
@@ -1255,7 +1255,7 @@ const App = () => {
     }
 
     try {
-      const result = await axios.post('http://localhost:5000/data', recordToAdd, {
+      const result = await axios.post('https://statxo-usk4.onrender.com/data', recordToAdd, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setData([...data, result.data]);
@@ -1283,7 +1283,7 @@ const App = () => {
     );
     setData(updatedData);
     try {
-      await axios.put(`http://localhost:5000/data/${id}`, { [field]: value }, {
+      await axios.put(`https://statxo-usk4.onrender.com/data/${id}`, { [field]: value }, {
         headers: { Authorization: `Bearer ${token}` }
       });
     } catch (error) {
@@ -1294,7 +1294,7 @@ const App = () => {
 
   const handleSaveAll = async () => {
     try {
-      await axios.put('http://localhost:5000/data', data, {
+      await axios.put('https://statxo-usk4.onrender.com/data', data, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchData();
