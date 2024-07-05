@@ -35,7 +35,7 @@ const Login = ({ setRole }) => {
 
   const handleLogin = async (role) => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { role });
+      const response = await axios.post('https://statxo-usk4.onrender.com/login', { role });
       setRole(response.data.role, response.data.token);
       localStorage.setItem('token', response.data.token);
     } catch (err) {
